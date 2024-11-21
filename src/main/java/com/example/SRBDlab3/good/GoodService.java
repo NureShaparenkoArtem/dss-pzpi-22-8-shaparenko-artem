@@ -26,16 +26,24 @@ public class GoodService {
         goodRepository.updateDescription(departmentId);
     }
 
-    public void updateGoodPrice(Integer regGoodId, Double newPrice) {
+    @Transactional
+    public void updateGoodPrice(int goodId, double newPrice) {
         try {
-            goodRepository.updateGoodPrice(regGoodId, newPrice);
+            goodRepository.updateGoodPrice(goodId, newPrice);
         } catch (Exception e) {
-            if (e.getMessage().contains("Good with ID")) {
-                throw new IllegalArgumentException("Good with ID " + regGoodId + " does not exist");
+            Throwable cause = e.getCause();
+            while (cause != null) {
+                if (cause.getMessage() != null && cause.getMessage().contains("Product with ID")) {
+                    String cleanMessage = cause.getMessage().split("Where:")[0].trim();
+                    throw new IllegalArgumentException(cleanMessage);
+                }
+                cause = cause.getCause();
             }
-            throw new RuntimeException("Unexpected error occurred", e);
+            throw new RuntimeException("Unexpected error occurred");
         }
     }
+
+
 
     public List<Good> getGoods() {
         return goodRepository.findAll();
