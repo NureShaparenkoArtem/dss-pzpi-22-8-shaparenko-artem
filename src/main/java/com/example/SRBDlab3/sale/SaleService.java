@@ -9,14 +9,20 @@ import java.util.List;
 public class SaleService {
 
     private final SaleRepository saleRepository;
+    private final SaleGTORepository saleGTORepository;
 
     @Autowired
-    public SaleService(SaleRepository saleRepository) {
+    public SaleService(SaleRepository saleRepository, SaleGTORepository saleGTORepository) {
         this.saleRepository = saleRepository;
+        this.saleGTORepository = saleGTORepository;
     }
 
     public List<Sale> getSales() {
         return saleRepository.findAll();
+    }
+
+    public List<SaleGTO> getSalesGTO() {
+        return saleGTORepository.findAll();
     }
 
     public void deleteById(Integer id) {

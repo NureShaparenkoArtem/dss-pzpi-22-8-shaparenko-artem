@@ -15,7 +15,6 @@ public class Department {
     public Department() {
     }
 
-
     public Department(Integer dept_id,
                       String name,
                       String info) {

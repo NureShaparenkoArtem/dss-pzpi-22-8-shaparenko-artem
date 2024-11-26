@@ -22,7 +22,13 @@ public class Good {
     public Good() {
     }
 
-    public Good(Integer good_id, String name, Double price, Integer quantity, String producer, Long dept_id, String description) {
+    public Good(Integer good_id,
+                String name,
+                Double price,
+                Integer quantity,
+                String producer,
+                Long dept_id,
+                String description) {
         this.good_id = good_id;
         this.name = name;
         this.price = price;
@@ -32,7 +38,12 @@ public class Good {
         this.description = description;
     }
 
-    public Good(String name, Double price, Integer quantity, String producer, Long dept_id, String description) {
+    public Good(String name,
+                Double price,
+                Integer quantity,
+                String producer,
+                Long dept_id,
+                String description) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;

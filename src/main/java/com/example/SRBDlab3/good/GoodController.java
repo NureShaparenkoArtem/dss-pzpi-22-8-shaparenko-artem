@@ -12,7 +12,6 @@ import java.util.Map;
 @RequestMapping(path="api/v1/good")
 @CrossOrigin(origins = "http://localhost:3000")
 public class GoodController {
-
     private final GoodService goodService;
 
     @Autowired

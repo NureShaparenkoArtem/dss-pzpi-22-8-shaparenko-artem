@@ -10,9 +10,7 @@ import java.util.List;
 
 @SpringBootApplication
 public class SrbDlab3Application {
-
 	public static void main(String[] args) {
 		SpringApplication.run(SrbDlab3Application.class, args);
 	}
-
 }

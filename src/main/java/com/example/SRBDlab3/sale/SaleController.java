@@ -24,6 +24,11 @@ public class SaleController {
         return saleService.getSales();
     }
 
+    @GetMapping("/details")
+    public List<SaleGTO> getSalesGTO(){
+        return saleService.getSalesGTO();
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteSale(@PathVariable Integer id) {
         saleService.deleteById(id);
