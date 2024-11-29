@@ -25,8 +25,8 @@ public class SaleController {
     }
 
     @GetMapping("/details")
-    public List<SaleGTO> getSalesGTO(){
-        return saleService.getSalesGTO();
+    public List<SaleDTO> getSalesGTO(){
+        return saleService.getSalesDTO();
     }
 
     @DeleteMapping("/{id}")

@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "sales")
-public class SaleGTO {
+public class SaleDTO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer sale_id;
@@ -18,10 +18,10 @@ public class SaleGTO {
     @JoinColumn(name = "good_id")
     private Good good;
 
-    public SaleGTO() {
+    public SaleDTO() {
     }
 
-    public SaleGTO(Integer sale_id, Long check_no, Date date_sale, Long quantity, Good good) {
+    public SaleDTO(Integer sale_id, Long check_no, Date date_sale, Long quantity, Good good) {
         this.sale_id = sale_id;
         this.check_no = check_no;
         this.date_sale = date_sale;
@@ -29,7 +29,7 @@ public class SaleGTO {
         this.good = good;
     }
 
-    public SaleGTO(Long check_no, Date date_sale, Long quantity, Good good) {
+    public SaleDTO(Long check_no, Date date_sale, Long quantity, Good good) {
         this.check_no = check_no;
         this.date_sale = date_sale;
         this.quantity = quantity;

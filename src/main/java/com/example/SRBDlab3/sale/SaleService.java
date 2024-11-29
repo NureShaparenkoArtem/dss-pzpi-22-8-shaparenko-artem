@@ -21,7 +21,7 @@ public class SaleService {
         return saleRepository.findAll();
     }
 
-    public List<SaleGTO> getSalesGTO() {
+    public List<SaleDTO> getSalesDTO() {
         return saleGTORepository.findAll();
     }
 

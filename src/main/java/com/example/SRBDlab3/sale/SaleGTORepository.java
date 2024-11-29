@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface SaleGTORepository
-        extends JpaRepository<SaleGTO, Integer> {
+        extends JpaRepository<SaleDTO, Integer> {
 }
